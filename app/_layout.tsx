@@ -9,9 +9,18 @@ import 'react-native-reanimated'
 import {useColorScheme} from '@/components/useColorScheme'
 import {Provider} from 'react-redux'
 import store from '@/store/store'
+import {LogBox} from 'react-native'
 
 if (__DEV__) {
   require('../ReactotronConfig')
+
+  // TODO: Remove when fixed
+  LogBox.ignoreLogs([
+    'window.performance.clearMeasures is not implemented',
+    'window.performance.clearMarks is not implemented',
+    'window.performance.measure is not implemented',
+    'window.performance.mark is not implemented',
+  ])
 }
 
 export {
